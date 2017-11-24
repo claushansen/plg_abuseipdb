@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.7" type="plugin" group="system">
-    <name>System - IPBlocking of offenders registered in AbuseIPDB</name>
+    <name>PLG_ABUSEIPDB</name>
     <author>Claus Hansen</author>
     <creationDate>November 2017</creationDate>
     <copyright>Copyright (C) 2017 Holder. All rights reserved.</copyright>
@@ -8,12 +8,16 @@
     <authorEmail>webkonsulent.claus.hansen@gmail.com</authorEmail>
     <authorUrl>https://expoze.dk</authorUrl>
     <version>1.0.1</version>
-    <description>Block visitors if they are registered in AbuseIPDB</description>
+    <description>PLG_ABUSEIPDB_XML_DESCRIPTION</description>
     <files>
         <filename plugin="abuseipdb">abuseipdb.php</filename>
         <filename plugin="abuseipdb">install.mysql.utf8.sql</filename>
         <filename plugin="abuseipdb">uninstall.mysql.utf8.sql</filename>
     </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_abuseipdb.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_abuseipdb.sys.ini</language>
+    </languages>
     <install>
         <sql>
             <file driver="mysql" charset="utf8">install.mysql.utf8.sql</file>
@@ -31,16 +35,16 @@
                         name="APIkey"
                         type="text"
                         default=""
-                        label="AbuseIPDB APIkey"
+                        label="PLG_ABUSEIPDB_PARAM_APIKEY_LABEL"
                         required="true"
-                        description="Your APIkey from AbuseIPDB.com"
+                        description="PLG_ABUSEIPDB_PARAM_APIKEY_DESCRIPTION"
                         />
                 <field
                         name="lookup_period"
                         type="list"
                         default="30"
-                        label="Lookup Period"
-                        description="Choose the period of time to look back in time.">
+                        label="PLG_ABUSEIPDB_PARAM_LOOKUP_PERIOD_LABEL"
+                        description="PLG_ABUSEIPDB_PARAM_LOOKUP_PERIOD_DESCRIPTION">
                     <option value="7">1 Week</option>
                     <option value="14">2 Weeks</option>
                     <option value="21">3 Weeks</option>
@@ -50,16 +54,16 @@
                         name="min_attempts"
                         type="text"
                         default="1"
-                        label="Minimum registered Attempts"
+                        label="PLG_ABUSEIPDB_PARAM_MIN_ATTEMPTS_LABEL"
                         required="true"
-                        description="How many times should a IP have been registered in AbuseIPDB before you want to reject"
+                        description="PLG_ABUSEIPDB_PARAM_MIN_ATTEMPTS_DESCRIPTION"
                         />
                 <field
                         name="whitelist"
                         type="textarea"
                         default="::1&#13;&#10;127.0.0.1"
-                        label="Whitelist IPs"
-                        description="List of IPs that should not be tested against AbuseIPDB.&lt;br /&gt;One IP per line."
+                        label="PLG_ABUSEIPDB_PARAM_WHITELIST_LABEL"
+                        description="PLG_ABUSEIPDB_PARAM_WHITELIST_DESCRIPTION"
                         rows="10"
                         cols="5"
                         />
@@ -67,8 +71,8 @@
                         name="blacklist"
                         type="textarea"
                         default=""
-                        label="Blacklist IPs"
-                        description="List of IPs that that will be blocked allways.&lt;br /&gt;One IP per line."
+                        label="PLG_ABUSEIPDB_PARAM_BLACKLIST_LABEL"
+                        description="PLG_ABUSEIPDB_PARAM_BLACKLIST_DESCRIPTION"
                         rows="10"
                         cols="5"
                         />
