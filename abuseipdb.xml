@@ -51,9 +51,17 @@
                     <option value="30">1 Month</option>
                 </field>
                 <field
+                        name="cache_time"
+                        type="text"
+                        default="3"
+                        label="PLG_ABUSEIPDB_PARAM_CACHE_TIME_LABEL"
+                        required="true"
+                        description="PLG_ABUSEIPDB_PARAM_CACHE_TIME_DESCRIPTION"
+                        />
+                <field
                         name="min_attempts"
                         type="text"
-                        default="1"
+                        default="3"
                         label="PLG_ABUSEIPDB_PARAM_MIN_ATTEMPTS_LABEL"
                         required="true"
                         description="PLG_ABUSEIPDB_PARAM_MIN_ATTEMPTS_DESCRIPTION"
