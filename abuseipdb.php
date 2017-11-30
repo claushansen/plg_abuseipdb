@@ -74,7 +74,6 @@ class plgSystemAbuseipdb extends JPlugin
 
         //Do we have the IP in cache?
         $cached = $this->get_cached($IP,$cache_time);
-        var_dump($cached);
         //Was it found in cache?
         if(is_object($cached)){
             //Has it allready been blocked?
