@@ -9,6 +9,6 @@ CREATE TABLE IF NOT EXISTS `#__abuseipdb_entries` (
 CREATE TABLE IF NOT EXISTS `#__abuseipdb_cache` (
   `IP` varchar(255) NOT NULL,
   `blocked` int(11) NOT NULL DEFAULT '0',
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` datetime NOT NULL,
   PRIMARY KEY (`IP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
