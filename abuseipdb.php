@@ -101,7 +101,6 @@ class plgSystemAbuseipdb extends JPlugin
             //Whoops! couldn't connect to abuseipdb. Jumping out and we try again next time.
             return true;
         }
-        $response = $http->get('https://www.abuseipdb.com/check/'.$IP.'/json?key='.$APIkey.'&days='.$lookup_period);
         // Did we get a connection?
         if($response->code == 200){
             //Converting JSON response body to array
