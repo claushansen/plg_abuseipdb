@@ -94,6 +94,13 @@ class plgSystemAbuseipdb extends JPlugin
 
         //Not in cache? lets look it up in AbuseIPDB
         $http = JHttpFactory::getHttp();
+        //try to connect and look it up in AbuseIPDB.
+        try {
+            $response = $http->get('https://www.abuseipdb.com/check/' . $IP . '/json?key=' . $APIkey . '&days=' . $lookup_period, null, 2);
+        }catch (Exception $e){
+            //Whoops! couldn't connect to abuseipdb. Jumping out and we try again next time.
+            return true;
+        }
         $response = $http->get('https://www.abuseipdb.com/check/'.$IP.'/json?key='.$APIkey.'&days='.$lookup_period);
         // Did we get a connection?
         if($response->code == 200){
